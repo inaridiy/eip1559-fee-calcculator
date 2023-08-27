@@ -1,6 +1,6 @@
 {
   "name": "bullet-proof-gas",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "packageManager": "pnpm@8.7.0",
   "keywords": [
@@ -29,10 +29,9 @@
     "lint": "rome check .",
     "lint:fix": "pnpm lint --apply"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "typings": "./dist/index.d.ts",
+  "main": "./dist",
+  "module": "./dist",
+  "types": "./dist",
   "exports": {
     ".": "./dist/index.js",
     "./core": "./dist/core.js",
