@@ -1,11 +1,18 @@
 {
   "name": "eip1559-fee-calcculator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "packageManager": "pnpm@8.7.0",
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "ethereum",
+    "eip1559",
+    "ethers",
+    "web3",
+    "dapp"
+  ],
   "author": "inaridiy",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
@@ -46,6 +53,17 @@
     "ethers-v5": "npm:ethers@5",
     "ethers-v6": "npm:ethers@6",
     "viem": "^>=1.0.0 <2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ethers-v5": {
+      "optional": true
+    },
+    "ethers-v6": {
+      "optional": true
+    },
+    "viem": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",
