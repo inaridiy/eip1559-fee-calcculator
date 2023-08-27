@@ -1,6 +1,6 @@
 {
   "name": "bullet-proof-gas",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "packageManager": "pnpm@8.7.0",
   "keywords": [
@@ -11,6 +11,11 @@
     "web3",
     "dapp"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inaridiy/eip1559-fee-calcculator.git"
+  },
+  "homepage": "https://github.com/inaridiy/eip1559-fee-calcculator.git",
   "files": [
     "dist",
     "!dist/**/*.tsbuildinfo",
