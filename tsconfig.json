@@ -10,9 +10,13 @@
         "src/_test"
     ],
     "compilerOptions": {
+        "outDir": "dist",
+        "rootDir": "src",
         "target": "ESNext",
         "moduleResolution": "Node",
-        "esModuleInterop": false,
-        "allowSyntheticDefaultImports": false,
+        "declaration": true,
+        "declarationMap": true,
+        "inlineSourceMap": true,
+        "esModuleInterop": true,
     }
 }

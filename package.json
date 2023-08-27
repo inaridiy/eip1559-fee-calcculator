@@ -1,6 +1,6 @@
 {
   "name": "bullet-proof-gas",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "packageManager": "pnpm@8.7.0",
   "keywords": [
@@ -24,38 +24,35 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build": "pnpm run clean && pnpm run build:cjs && pnpm run build:esm && pnpm run build:types",
-    "build:cjs": "tsc --project tsconfig.json --module commonjs --outDir ./dist/cjs",
-    "build:esm": "tsc --project tsconfig.json --module esnext --outDir ./dist/esm",
-    "build:types": "tsc --project tsconfig.json --module esnext --declarationDir ./dist/types --emitDeclarationOnly --declaration --declarationMap",
+    "build": "pnpm run clean && tsc ",
     "format": "rome format . --write",
     "lint": "rome check .",
     "lint:fix": "pnpm lint --apply"
   },
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
-  "typings": "./dist/types/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "default": "./dist/cjs/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": null
     },
     "./core": {
-      "types": "./dist/types/core.d.ts",
-      "import": "./dist/esm/core.js",
-      "default": "./dist/cjs/core.js"
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "default": null
     },
     "./ethers5": {
-      "types": "./dist/types/ethers-adapter/ethersV5.d.ts",
-      "import": "./dist/esm/ethers-adapter/ethersV5.js",
-      "default": "./dist/cjs/ethers-adapter/ethersV5.js"
+      "types": "./dist/ethers-adapter/ethersV5.d.ts",
+      "import": "./dist/ethers-adapter/ethersV5.js",
+      "default": null
     },
     "./ethers6": {
-      "types": "./dist/types/ethers-adapter/ethersV6.d.ts",
-      "import": "./dist/esm/ethers-adapter/ethersV6.js",
-      "default": "./dist/cjs/ethers-adapter/ethersV6.js"
+      "types": "./dist/ethers-adapter/ethersV6.d.ts",
+      "import": "./dist/ethers-adapter/ethersV6.js",
+      "default": null
     }
   },
   "peerDependencies": {
