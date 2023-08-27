@@ -3,17 +3,45 @@
   "version": "1.0.0",
   "description": "",
   "packageManager": "pnpm@8.7.0",
-  "main": "index.js",
-  "types": "src/index.ts",
+  "keywords": [],
+  "author": "inaridiy",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "build": "pnpm run clean && pnpm run build:esm && pnpm run build:types",
+    "build:esm": "tsc --project tsconfig.json --module esnext --outDir ./dist/esm",
+    "build:types": "tsc --project tsconfig.json --module esnext --declarationDir ./dist/types --emitDeclarationOnly --declaration --declarationMap",
     "format": "rome format . --write",
     "lint": "rome check .",
     "lint:fix": "pnpm lint --apply"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "typings": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/esm/index.js"
+    },
+    "./core": {
+      "types": "./dist/types/core.d.ts",
+      "import": "./dist/esm/core.js",
+      "default": "./dist/esm/core.js"
+    },
+    "./ethers5": {
+      "types": "./dist/types/ethers-adapter/ethersV5.d.ts",
+      "import": "./dist/esm/ethers-adapter/ethersV5.js",
+      "default": "./dist/esm/ethers-adapter/ethersV5.js"
+    },
+    "./ethers6": {
+      "types": "./dist/types/ethers-adapter/ethersV6.d.ts",
+      "import": "./dist/esm/ethers-adapter/ethersV6.js",
+      "default": "./dist/esm/ethers-adapter/ethersV6.js"
+    }
+  },
   "peerDependencies": {
     "ethers-v5": "npm:ethers@5",
     "ethers-v6": "npm:ethers@6",
@@ -22,6 +50,7 @@
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",
     "rome": "12.1.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "rimraf": "^5.0.1"
   }
 }
