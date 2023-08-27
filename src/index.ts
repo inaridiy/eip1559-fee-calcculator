@@ -1,6 +1,6 @@
+import { PublicClient } from "viem";
 import { calculateGasViaFeeHistory } from "./calcGasViaFeeHistory";
 import { PriorityLevel } from "./constants";
-import { PublicClient } from "viem";
 import { FeeHistory } from "./types";
 
 export { calculateGasViaFeeHistory, PriorityLevel, FeeHistory };

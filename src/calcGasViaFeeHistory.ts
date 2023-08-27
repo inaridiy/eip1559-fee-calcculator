@@ -1,5 +1,5 @@
 import { PriorityLevel, SETTINGS_BY_PRIORITY_LEVEL } from "./constants";
-import { FeeHistory } from "./types";
+import { Eip1559GasFee, FeeHistory } from "./types";
 
 const medianOf = (numbers: bigint[]): bigint => {
   const sortedNumbers = numbers.slice().sort((a, b) => (a > b ? 1 : -1));
@@ -10,7 +10,7 @@ const medianOf = (numbers: bigint[]): bigint => {
 
 const max = <T>(a: T, b: T) => (a > b ? a : b);
 
-export const calculateGasViaFeeHistory = (priorityLevel: PriorityLevel, feeHistory: FeeHistory) => {
+export const calculateGasViaFeeHistory = (priorityLevel: PriorityLevel, feeHistory: FeeHistory): Eip1559GasFee => {
   const settings = SETTINGS_BY_PRIORITY_LEVEL[priorityLevel];
 
   const latestBaseFeePerGas = feeHistory.baseFeePerGas[feeHistory.baseFeePerGas.length - 1];
@@ -24,7 +24,7 @@ export const calculateGasViaFeeHistory = (priorityLevel: PriorityLevel, feeHisto
   const suggestedMaxFeePerGas = adjustedBaseFee + suggestedMaxPriorityFeePerGas;
 
   return {
-    suggestedMaxPriorityFeePerGas,
-    suggestedMaxFeePerGas,
+    maxPriorityFeePerGas: suggestedMaxPriorityFeePerGas,
+    maxFeePerGas: suggestedMaxFeePerGas,
   };
 };
