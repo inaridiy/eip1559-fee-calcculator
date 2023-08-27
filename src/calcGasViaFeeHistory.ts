@@ -24,7 +24,6 @@ export const calculateGasViaFeeHistory = (priorityLevel: PriorityLevel, feeHisto
   const suggestedMaxFeePerGas = adjustedBaseFee + suggestedMaxPriorityFeePerGas;
 
   return {
-    ...settings.estimatedWaitTimes,
     suggestedMaxPriorityFeePerGas,
     suggestedMaxFeePerGas,
   };

@@ -9,29 +9,17 @@ export const SETTINGS_BY_PRIORITY_LEVEL = {
     baseFeePercentageMultiplier: 110n,
     priorityFeePercentageMultiplier: 94n,
     minSuggestedMaxPriorityFeePerGas: 1_000_000_000n,
-    estimatedWaitTimes: {
-      minWaitTimeEstimate: 15_000,
-      maxWaitTimeEstimate: 30_000,
-    },
   },
   medium: {
     percentile: 20 as Percentile,
     baseFeePercentageMultiplier: 120n,
     priorityFeePercentageMultiplier: 97n,
     minSuggestedMaxPriorityFeePerGas: 1_500_000_000n,
-    estimatedWaitTimes: {
-      minWaitTimeEstimate: 15_000,
-      maxWaitTimeEstimate: 45_000,
-    },
   },
   high: {
     percentile: 30 as Percentile,
     baseFeePercentageMultiplier: 125n,
     priorityFeePercentageMultiplier: 98n,
     minSuggestedMaxPriorityFeePerGas: 2_000_000_000n,
-    estimatedWaitTimes: {
-      minWaitTimeEstimate: 15_000,
-      maxWaitTimeEstimate: 60_000,
-    },
   },
 };

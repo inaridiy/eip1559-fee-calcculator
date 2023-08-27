@@ -32,12 +32,13 @@ export const fetchFeeHistory = async (params: FetchFeeHistoryParams): Promise<Fe
   return adjustedFeeHistory;
 };
 
-export const fetchAndCalculateGasViaFeeHistory = async <T extends PriorityLevel>(client: PublicClient) => {
+export const fetchAndCalculateGasViaFeeHistory = async (client: PublicClient) => {
   const feeHistory = await fetchFeeHistory({ client, blockNumber: "latest", blockCount: 5, percentiles: [10, 20, 30] });
   const estimatedBaseFee = feeHistory.baseFeePerGas[feeHistory.baseFeePerGas.length - 1];
 
   return {
     estimatedBaseFee,
+    blockNumber: feeHistory.oldestBlock,
     high: calculateGasViaFeeHistory("high", feeHistory),
     medium: calculateGasViaFeeHistory("medium", feeHistory),
     low: calculateGasViaFeeHistory("low", feeHistory),
