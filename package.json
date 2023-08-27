@@ -1,6 +1,6 @@
 {
-  "name": "eip1559-fee-calcculator",
-  "version": "1.0.1",
+  "name": "eip1559-fee-calculator",
+  "version": "1.0.2",
   "description": "",
   "packageManager": "pnpm@8.7.0",
   "keywords": [
@@ -10,6 +10,14 @@
     "ethers",
     "web3",
     "dapp"
+  ],
+  "files": [
+    "dist",
+    "!dist/**/*.tsbuildinfo",
+    "src/**/*.ts",
+    "!src/**/*.test.ts",
+    "!src/**/*.test-d.ts",
+    "!src/**/*.bench.ts"
   ],
   "author": "inaridiy",
   "license": "MIT",
