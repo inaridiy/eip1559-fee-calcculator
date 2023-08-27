@@ -6,10 +6,10 @@ settings:
 
 dependencies:
   ethers-v5:
-    specifier: npm:ethers@5
+    specifier: npm:ethers@>=5.0.0 <6.0.0
     version: /ethers@5.7.2
   ethers-v6:
-    specifier: npm:ethers@6
+    specifier: npm:ethers@>=6.0.0 <7.0.0
     version: /ethers@6.7.1
   viem:
     specifier: ^>=1.0.0 <2.0.0
