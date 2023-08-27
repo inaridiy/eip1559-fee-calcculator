@@ -1,6 +1,6 @@
 {
   "name": "bullet-proof-gas",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "packageManager": "pnpm@8.7.0",
   "keywords": [
@@ -49,8 +49,14 @@
   },
   "typesVersions": {
     "*": {
-      "*": [
-        "dist/*"
+      "core": [
+        "./dist/core/index.d.ts"
+      ],
+      "ethers5": [
+        "./dist/ethers-adapter/ethersV5.d.ts"
+      ],
+      "ethers6": [
+        "./dist/ethers-adapter/ethersV6.d.ts"
       ]
     }
   },
