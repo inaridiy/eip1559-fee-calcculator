@@ -18,7 +18,11 @@ export const fetchFeeHistory = async (
 ): Promise<FeeHistory> => {
 	const feeHistory: RpcFeeHistoryResponse = await params.provider.send(
 		"eth_feeHistory",
-		[ethers.toBeHex(params.blockCount), params.blockNumber, params.percentiles],
+		[
+			ethers.toQuantity(ethers.toBeHex(params.blockCount)),
+			params.blockNumber,
+			params.percentiles,
+		],
 	);
 
 	const adjustedFeeHistory = {
