@@ -1,6 +1,6 @@
 {
   "name": "bullet-proof-gas",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "packageManager": "pnpm@8.7.0",
   "keywords": [
@@ -35,28 +35,24 @@
   "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./core": {
-      "import": {
-        "types": "./dist/core.d.ts",
-        "default": "./dist/core.js"
-      }
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "default": "./dist/core.js"
     },
     "./ethers5": {
-      "import": {
-        "types": "./dist/ethers-adapter/ethersV5.d.ts",
-        "default": "./dist/ethers-adapter/ethersV5.js"
-      }
+      "types": "./dist/ethers-adapter/ethersV5.d.ts",
+      "import": "./dist/ethers-adapter/ethersV5.js",
+      "default": "./dist/ethers-adapter/ethersV5.js"
     },
     "./ethers6": {
-      "import": {
-        "types": "./dist/ethers-adapter/ethersV6.d.ts",
-        "default": "./dist/ethers-adapter/ethersV6.js"
-      }
+      "types": "./dist/ethers-adapter/ethersV6.d.ts",
+      "import": "./dist/ethers-adapter/ethersV6.js",
+      "default": "./dist/ethers-adapter/ethersV6.js"
     }
   },
   "peerDependencies": {

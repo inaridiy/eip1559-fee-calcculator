@@ -19,9 +19,9 @@ export const fetchFeeHistory = async (
 	const feeHistory: RpcFeeHistoryResponse = await params.provider.send(
 		"eth_feeHistory",
 		[
-			utils.hexStripZeros(utils.hexlify(10)),
+			utils.hexStripZeros(utils.hexlify(params.blockCount)),
 			params.blockNumber,
-			params.blockCount,
+			params.percentiles,
 		],
 	);
 
