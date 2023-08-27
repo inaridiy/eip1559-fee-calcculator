@@ -1,5 +1,5 @@
 {
-  "name": "eip1559-fee-calculator",
+  "name": "bullet-proof-gas",
   "version": "0.0.1",
   "description": "",
   "packageManager": "pnpm@8.7.0",
