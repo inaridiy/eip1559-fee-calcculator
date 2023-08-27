@@ -1,0 +1,23 @@
+{
+  "name": "eip1559-fee-calcculator",
+  "version": "1.0.0",
+  "description": "",
+  "packageManager": "pnpm@8.7.0",
+  "main": "index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "ethers-v5": "npm:ethers@5",
+    "ethers-v6": "npm:ethers@6",
+    "viem": "^>=1.0.0 <2.0.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "typescript": "^5.2.2"
+  }
+}
