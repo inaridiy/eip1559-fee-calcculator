@@ -1,8 +1,8 @@
 export type PriorityLevel = typeof PRIORITY_LEVELS[number];
 export type Percentile = typeof PRIORITY_LEVEL_PERCENTILES[number];
 
-export const PRIORITY_LEVELS = ["low", "medium", "high"] as const;
-export const PRIORITY_LEVEL_PERCENTILES = [10, 20, 30] as const;
+export const PRIORITY_LEVELS = ["low", "medium", "high", "ultra"] as const;
+export const PRIORITY_LEVEL_PERCENTILES = [10, 20, 30, 50] as const;
 export const SETTINGS_BY_PRIORITY_LEVEL = {
 	low: {
 		percentile: 10 as Percentile,
@@ -21,5 +21,11 @@ export const SETTINGS_BY_PRIORITY_LEVEL = {
 		baseFeePercentageMultiplier: 125n,
 		priorityFeePercentageMultiplier: 98n,
 		minSuggestedMaxPriorityFeePerGas: 2_000_000_000n,
+	},
+	ultra: {
+		percentile: 50 as Percentile,
+		baseFeePercentageMultiplier: 135n,
+		priorityFeePercentageMultiplier: 101n,
+		minSuggestedMaxPriorityFeePerGas: 2_500_000_000n,
 	},
 };

@@ -45,7 +45,7 @@ export const fetchAndCalculateGasViaFeeHistory = async (
 		client,
 		blockNumber: "latest",
 		blockCount: 5,
-		percentiles: [10, 20, 30],
+		percentiles: [10, 20, 30, 50],
 	});
 	const estimatedBaseFee =
 		feeHistory.baseFeePerGas[feeHistory.baseFeePerGas.length - 1];
@@ -53,6 +53,7 @@ export const fetchAndCalculateGasViaFeeHistory = async (
 	return {
 		estimatedBaseFee,
 		blockNumber: feeHistory.oldestBlock,
+		ultra: calculateGasViaFeeHistory("ultra", feeHistory),
 		high: calculateGasViaFeeHistory("high", feeHistory),
 		medium: calculateGasViaFeeHistory("medium", feeHistory),
 		low: calculateGasViaFeeHistory("low", feeHistory),
